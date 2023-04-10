@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Booking.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Booking Page</title>
+</head>
+<body>
+    <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="False" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        {% if user.is_authenticated %}
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+        </li>
+  
+        {% else %}
+  
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+  
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+   <h1 class="animate__animated animate__zoomIn">Make Preferences</h1>
+
+<div class="booking-form-box">
+  <form action="" method="POST">
+  {% csrf_token %}
+  
+        <div class="booking-form">
+          <div class="input-grp">
+          
+            {{form.roundtrip.label}}
+            {{form.roundtrip}}
+          </div>
+
+        <div class="input-grp">
+          
+            {{form.oneway.label}}
+            {{form.oneway}}
+          </div>
+
+          <div class="input-grp">
+          
+            {{form.multi_station.label}}
+            {{form.multi_station}}
+          </div>
+
+      <div class="input-grp">
+        
+          {{form.departing.label}}
+          {{form.departing}}
+        </div>
+
+        <div class="input-grp">
+          
+          {{form.destination.label}}
+          {{form.destination}}
+        </div>
+        <div class="input-grp">
+
+          {{form.departure_date.label}}
+          {{form.departure_date}}
+        </div>
+        <div class="input-grp">
+       
+          {{form.return_date.label}}
+          {{form.return_date}}
+        </div>
+        <div class="input-grp">
+        
+          {{form.adults.label}}
+          {{form.adults}}
+        </div>
+        <div class="input-grp">
+        
+          {{form.children.label}}
+          {{form.children}}
+        </div>
+      </div>
+      <button type="submit" class="btn btn-green">Procced</button>
+    </form> 
+</body>
+</html>

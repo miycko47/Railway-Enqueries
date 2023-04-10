@@ -1,0 +1,105 @@
+
+h1{
+    color: rgb(255, 255, 255) !important;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-top: 50px !important;
+}
+
+body{
+    background-image: url("images/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+
+/*Booking form*/
+.booking-form-box{
+    max-width: fit-content;
+    border: 2px solid #fff;
+    margin: 10px auto 0;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.radio-btn{
+    margin: 0 20px;
+}
+
+.radio-btn .btn{
+    margin: 20px 10px 20px 0 ;
+    box-shadow: none;
+}
+
+.radio-btn .btn::after{
+    content:"";
+    height: 15px;;
+    width: 15px;
+    top: -4px;
+    left: -1px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    display: inline-block;
+    border: 3px solid #fff;
+    visibility: visible;
+    border-radius: 5px;
+}
+
+.radio-btn .btn:checked::after{
+    content: '';
+    background-color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+
+.radio-btn span{
+    color: #fff;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.booking-form{
+    padding: 0 20px 20px;
+}
+
+.booking-form label{
+    margin-bottom: 5px;
+    margin-top: 1px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+
+input::placeholder{
+    color: rgb(255, 255, 255) !important;
+}
+
+.input-grp{
+    width: 151px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.form-control{
+    font-size: 14px !important ;
+    border-radius: 15px !important ;
+    color: rgb(255, 255, 255) !important ;
+    background: transparent !important ;
+    box-shadow: none !important;
+}
+#final{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 15px;
+    text-align: center;
+    border: none;
+    margin-left: 50px;
+}
+

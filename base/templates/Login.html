@@ -1,0 +1,67 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="{% static 'All.css' %}">
+    <title>Railway Enquiries</title>
+</head>
+<body>
+    <!--Login--> 
+
+{% comment %} <div class="container py-5">
+    <h1>Login</h1>
+    <form method="POST">
+      {% csrf_token %}
+      {{ login_form|crispy }}
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+  </div> {% endcomment %}
+
+     <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href={% url 'home' %} id="logo">
+            <img src="{% static 'images/home.png' %}" alt="logo" width="30" height="24">
+          </a>
+        </div>
+    <div class="box">
+        <div class="container">
+            <h1 class="animate__animated animate__zoomIn">Ethiopian Railway Enquiries</h1>
+            <div class="top">
+                
+                <header class="animate__animated animate__zoomIn">Login</header>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Username" id="" name="username">
+            <i class='bx bx-user' ></i>
+        </div>
+
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Password" id="" name="password">
+            <i class='bx bx-lock-alt'></i>
+        </div>
+
+        <div class="input-field">
+            <input type="submit" class="submit" value="Login" id="">
+        </div>
+    </form>
+        <div class="two-col">
+            <div class="two">
+                <label><a href="#">Forgot password?</a></label>
+            </div>
+        </form>
+            <div class="two">
+                <label><a href={% url 'signup' %}>Don't have an account?</a></label>
+            </div>
+        </div>
+    </div>
+</div>  
+</body>
+</html>
